@@ -1,28 +1,17 @@
-import type { Props as SearchbarProps } from "../../components/search/Searchbar.tsx";
-import Icon from "../../components/ui/Icon.tsx";
-import { MenuButton, SearchButton } from "../../islands/Header/Buttons.tsx";
-import CartButtonLinx from "../../islands/Header/Cart/linx.tsx";
-import CartButtonShopify from "../../islands/Header/Cart/shopify.tsx";
-import CartButtonVDNA from "../../islands/Header/Cart/vnda.tsx";
-import CartButtonVTEX from "../../islands/Header/Cart/vtex.tsx";
-import CartButtonWake from "../../islands/Header/Cart/wake.tsx";
-import CartButtonNuvemshop from "../../islands/Header/Cart/nuvemshop.tsx";
-import Searchbar from "../../islands/Header/Searchbar.tsx";
-import { usePlatform } from "../../sdk/usePlatform.tsx";
-import type { SiteNavigationElement } from "apps/commerce/types.ts";
+
 import Image from "apps/website/components/Image.tsx";
 import NavItem from "./NavItem.tsx";
+import { Logo } from "../../components/header/Header.tsx";
+import { MenuButton } from "../../islands/Header/Buttons.tsx";
+import { usePlatform } from "../../sdk/usePlatform.tsx";
 import { navbarHeight } from "./constants.ts";
-import { Buttons, Logo } from "../../components/header/Header.tsx";
+import type { SiteNavigationElement } from "apps/commerce/types.ts";
 
 // Make it sure to render it on the server only. DO NOT render it on an island
 function Navbar(
-  { items, searchbar, logo, buttons, logoPosition = "left", device }: {
+  { items, logo, device }: {
     items: SiteNavigationElement[];
-    searchbar?: SearchbarProps;
     logo?: Logo;
-    buttons?: Buttons;
-    logoPosition?: "left" | "center";
     device: "mobile" | "desktop" | "tablet";
   },
 ) {
@@ -51,16 +40,6 @@ function Navbar(
             />
           </a>
         )}
-
-        <div class="flex justify-end gap-1">
-          <SearchButton />
-          {platform === "vtex" && <CartButtonVTEX />}
-          {platform === "vnda" && <CartButtonVDNA />}
-          {platform === "wake" && <CartButtonWake />}
-          {platform === "linx" && <CartButtonLinx />}
-          {platform === "shopify" && <CartButtonShopify />}
-          {platform === "nuvemshop" && <CartButtonNuvemshop />}
-        </div>
       </div>
     );
   }
@@ -69,12 +48,7 @@ function Navbar(
   return (
     <div class="hidden sm:block w-full">
       <div class="container flex items-center justify-between">
-        
-        <div
-          class={`flex ${
-            logoPosition === "left" ? "justify-start -order-1" : "justify-center"
-          }`}
-        >
+        <div>
           {logo && (
             <a
               href="/"
@@ -90,11 +64,7 @@ function Navbar(
             </a>
           )}
         </div>
-        <ul
-          class={`flex gap-6 col-span-1 ${
-            logoPosition === "left" ? "justify-center" : "justify-start"
-          }`}
-        >
+        <ul class="flex gap-6 col-span-1">
           {items.map((item) => <NavItem item={item} />)}
         </ul>
       </div>
