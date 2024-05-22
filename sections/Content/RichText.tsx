@@ -13,6 +13,7 @@ export default function RichText(
 ) {
   return (
     <div
+      class="mx-5 md:mx-10"
       dangerouslySetInnerHTML={{ __html: text }}
       style={{
         maxWidth: containerWidth ? containerWidth : 1440,
