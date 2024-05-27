@@ -8,7 +8,7 @@ export default function ({ github }: Props) {
   if (!github) return null;
 
   const { owner, repo, lastUpdate, lastMessage } = github;
-  
+
   return (
     <div class="container mx-auto px-6 lg:px-0">
       <div class="flex flex-col items-center">
