@@ -1,10 +1,9 @@
 import { formatPrice } from "../sdk/format.ts";
-import type { Product } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import { Props } from "apps/wake/actions/cart/addItem.ts";
 import { invoke } from "../runtime.ts";
 import { SectionProps } from "deco/mod.ts";
+import { AppContext } from "../apps/site.ts";
 
 /** @titleBy title */
 interface Ad {
@@ -39,19 +38,15 @@ export function LoadingFallback() {
     return "Loading...";
 }
 
-export const loader = async (props: ProductProps) => {
-    const { product } = props;
-    const { productId, highlight } = product;
+export async function loader (props: ProductProps, req: Request, ctx: AppContext) {
+    console.log("loader");
+    const { product: { productId }} = props;
+    console.log("productId", productId);
 
     const result = await invoke["deco-sites/wavetemplate"].loaders.likesPerProduct({ productId });
-    console.log("result:", result)
+    console.log("result:", result);
 
-    const { product: totalLikes } = result;
-    if (highlight) {
-        props.product.highlight = totalLikes >= 3 && highlight;
-    }
-
-    return { ...props };
+    return { ...props, result };
 }
 
 export default function ProductAd({
@@ -60,12 +55,16 @@ export default function ProductAd({
         description = "Lorem ipsum dolor sit amet consectetur adipiscing elit sed euismod tincidunt dapibus",
         price = 129.99,
         imageSrc = "https://placehold.co/600x600",
+        highlight = false,
     },
-    adDescription = ""
+    adDescription = "",
+    result
 }: SectionProps<typeof loader>) {
+    console.log("highlight", highlight);
+    console.log("result", result);
     return (
         <div class="container px-3 sm:px-0">
-            <div class="flex flex-col sm:flex-row gap-3 bg-gray-100 p-3 rounded-xl my-5">
+            <div class={`flex flex-col sm:flex-row gap-3 p-3 rounded-xl my-5 ${highlight ? "border-2 border-black bg-gray-200" : "border-2 border-transparent bg-gray-100"}`}>
                 <Image
                     class="card"
                     src={imageSrc}
