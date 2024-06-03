@@ -2,12 +2,15 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
+import * as $$$$$$$$$0 from "./actions/likes.ts";
 import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
 import * as $$$$$$$$$$$1 from "./apps/site.ts";
 import * as $$$3 from "./loaders/availableIcons.ts";
 import * as $$$4 from "./loaders/icons.ts";
 import * as $$$0 from "./loaders/LastCommitOnGithub.ts";
 import * as $$$1 from "./loaders/Layouts/ProductCard.tsx";
+import * as $$$5 from "./loaders/likes.tsx";
+import * as $$$6 from "./loaders/likesPerProduct.tsx";
 import * as $$$2 from "./loaders/List/Sections.tsx";
 import * as $$$$$$0 from "./sections/Animation/Animation.tsx";
 import * as $$$$$$1 from "./sections/Cards/IconCardsCarousel.tsx";
@@ -70,6 +73,8 @@ const manifest = {
     "site/loaders/icons.ts": $$$4,
     "site/loaders/LastCommitOnGithub.ts": $$$0,
     "site/loaders/Layouts/ProductCard.tsx": $$$1,
+    "site/loaders/likes.tsx": $$$5,
+    "site/loaders/likesPerProduct.tsx": $$$6,
     "site/loaders/List/Sections.tsx": $$$2,
   },
   "sections": {
@@ -127,6 +132,9 @@ const manifest = {
     "site/sections/Social/WhatsApp.tsx": $$$$$$51,
     "site/sections/Temperature.tsx": $$$$$$52,
     "site/sections/Theme/Theme.tsx": $$$$$$53,
+  },
+  "actions": {
+    "site/actions/likes.ts": $$$$$$$$$0,
   },
   "apps": {
     "site/apps/decohub.ts": $$$$$$$$$$$0,
