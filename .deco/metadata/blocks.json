@@ -352,5 +352,11 @@
   "/.deco/blocks/Preview%20site%2Factions%2Flikes.ts.json": {
     "blockType": "actions",
     "__resolveType": "site/actions/likes.ts"
+  },
+  "/.deco/blocks/pages-Status-368159.json": {
+    "name": "Status",
+    "path": "/stats",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
   }
 }

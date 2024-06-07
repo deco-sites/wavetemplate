@@ -14,7 +14,8 @@
             "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed euismod tincidunt dapibus.",
             "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/b658ae7b-b527-478a-b1b9-71dca089b55a",
             "productId": 1,
-            "highlight": true
+            "highlight": true,
+            "productID": "1"
           }
         },
         {
@@ -23,7 +24,8 @@
             "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed euismod tincidunt dapibus.",
             "price": 199.99,
             "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/fda10a63-a124-43ad-8b01-91b57aa805ca",
-            "productId": 2
+            "productId": 2,
+            "productID": "2"
           }
         },
         {
@@ -32,7 +34,8 @@
             "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed euismod tincidunt dapibus.",
             "price": 299.99,
             "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/f78b157c-0f17-4f7a-bcef-a83af09bdb84",
-            "productId": 3
+            "productId": 3,
+            "productID": "3"
           }
         }
       ],

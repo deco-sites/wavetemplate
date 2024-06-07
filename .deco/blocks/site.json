@@ -65,7 +65,8 @@
   },
   "likes": {
     "__resolveType": "website/loaders/secret.ts",
-    "encrypted": "0fbcc1d677cdbd352be95106eb860a57"
+    "encrypted": "4557302633ff5348d5e59b41606a3935",
+    "name": "Teste"
   },
   "flavor": {
     "framework": "fresh"

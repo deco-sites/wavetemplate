@@ -1,15 +1,14 @@
-import { formatPrice } from "../sdk/format.ts";
-import type { Product } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
+import Button from "../components/ui/Button.tsx";
+import ProductReview from "../islands/PopUp/ProductReview.tsx";
+import { formatPrice } from "../sdk/format.ts";
+
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import { Props } from "apps/wake/actions/cart/addItem.ts";
-import { invoke } from "../runtime.ts";
-import { SectionProps } from "deco/mod.ts";
 
 /** @titleBy title */
 interface Ad {
     /** @title ID do Produto */
-    productId: number;
+    productID: string;
     /** @title Título do Produto */
     /** @description Dê um belo título para o seu anúncio */
     title: string;
@@ -23,12 +22,18 @@ interface Ad {
     highlight?: boolean;
 }
 
+export interface Like {
+    product: number;
+    comments: string[];
+}
+
 /** @title Product */
 export interface ProductProps {
     /** @title Dados do Produto */
     product: Ad;
     /** @title Descrição do Anúncio */
     adDescription?: string;
+    currentProductLikes?: Like;
 }
 
 export function ErrorFallback({ error }: { error?: Error }) {
@@ -39,33 +44,25 @@ export function LoadingFallback() {
     return "Loading...";
 }
 
-export const loader = async (props: ProductProps) => {
-    const { product } = props;
-    const { productId, highlight } = product;
-
-    const result = await invoke["deco-sites/wavetemplate"].loaders.likesPerProduct({ productId });
-    console.log("result:", result)
-
-    const { product: totalLikes } = result;
-    if (highlight) {
-        props.product.highlight = totalLikes >= 3 && highlight;
-    }
-
-    return { ...props };
-}
-
 export default function ProductAd({
     product: {
+        productID,
         title = "Teste 1",
         description = "Lorem ipsum dolor sit amet consectetur adipiscing elit sed euismod tincidunt dapibus",
         price = 129.99,
         imageSrc = "https://placehold.co/600x600",
+        highlight = false,
     },
-    adDescription = ""
-}: SectionProps<typeof loader>) {
+    adDescription = "",
+    currentProductLikes,
+}: ProductProps) {
+    const {
+        product: likes = 0
+    } = currentProductLikes || {};
+
     return (
         <div class="container px-3 sm:px-0">
-            <div class="flex flex-col sm:flex-row gap-3 bg-gray-100 p-3 rounded-xl my-5">
+            <div class={`flex flex-col sm:flex-row gap-3 ${highlight && likes >= 3 ? "bg-gray-200 border-2 border-black" : "bg-gray-100 border-2 border-transparent"} p-3 rounded-xl my-5`}>
                 <Image
                     class="card"
                     src={imageSrc}
@@ -74,10 +71,11 @@ export default function ProductAd({
                     height={300}
                     loading="lazy"
                 />
-                <div class="flex flex-col w-full">
+                <div class="flex flex-col items-start w-full mt-5">
                     <h2 class="text-lg font-bold uppercase">{title}</h2>
                     <p class="grow">{!adDescription ? description : adDescription}</p>
                     <p class="font-bold sm:text-right">{formatPrice(price)}</p>
+                    <ProductReview image={imageSrc} title={title} productID={productID} />
                 </div>
             </div>
         </div>
