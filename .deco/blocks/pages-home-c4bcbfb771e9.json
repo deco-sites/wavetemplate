@@ -5,44 +5,28 @@
       "__resolveType": "Header - 01"
     },
     {
-      "__resolveType": "site/sections/ProductAds.tsx",
-      "productAds": [
+      "__resolveType": "site/sections/Ads.tsx",
+      "sections": [
         {
+          "__resolveType": "site/sections/ProductAd.tsx",
+          "adDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum bibendum mauris, a iaculis nisi placerat eget. Nulla tincidunt libero ex. Nam ultricies vel turpis ut mattis. Mauris nec sodales magna. Etiam ullamcorper neque quis felis sollicitudin, fringilla congue ante ultricies. Aliquam feugiat leo hendrerit nisi fermentum efficitur.",
           "product": {
-            "title": "Arte 1",
-            "price": 399.9,
-            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed euismod tincidunt dapibus.",
-            "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/b658ae7b-b527-478a-b1b9-71dca089b55a",
-            "productId": 1,
-            "highlight": true,
-            "productID": "1"
+            "__resolveType": "vtex/loaders/legacy/productDetailsPage.ts",
+            "similars": false,
+            "slug": "vestido-pure"
           }
         },
         {
+          "__resolveType": "site/sections/ProductAd.tsx",
           "product": {
-            "title": "Arte 2",
-            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed euismod tincidunt dapibus.",
-            "price": 199.99,
-            "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/fda10a63-a124-43ad-8b01-91b57aa805ca",
-            "productId": 2,
-            "productID": "2"
-          }
-        },
-        {
-          "product": {
-            "title": "Arte 3",
-            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed euismod tincidunt dapibus.",
-            "price": 299.99,
-            "imageSrc": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/f78b157c-0f17-4f7a-bcef-a83af09bdb84",
-            "productId": 3,
-            "productID": "3"
-          }
+            "__resolveType": "vtex/loaders/legacy/productDetailsPage.ts",
+            "slug": "camisa-masculina-xadrez-azul-e-gray"
+          },
+          "adDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum bibendum mauris, a iaculis nisi placerat eget. Nulla tincidunt libero ex. Nam ultricies vel turpis ut mattis. Mauris nec sodales magna. Etiam ullamcorper neque quis felis sollicitudin, fringilla congue ante ultricies. Aliquam feugiat leo hendrerit nisi fermentum efficitur."
         }
       ],
-      "buttonTitle": "Clique aqui",
-      "message": "Lorem ipsum sit amet consectetur adipiscing elit sed euismod tincidunt dapibus dolor sit amet consectetur adipiscing elit sed euismod sit amet consectetur adipiscing elit sed euismod tincidunt dapibus tincidunt dapibus.",
-      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/4c9202c6-b1e1-4687-9d22-e70bcd27f39a",
-      "activeIndex": 0
+      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum bibendum mauris, a iaculis nisi placerat eget. Nulla tincidunt libero ex. Nam ultricies vel turpis ut mattis. Mauris nec sodales magna. Etiam ullamcorper neque quis felis sollicitudin, fringilla congue ante ultricies. Aliquam feugiat leo hendrerit nisi fermentum efficitur.",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/4c9202c6-b1e1-4687-9d22-e70bcd27f39a"
     }
   ],
   "__resolveType": "website/pages/Page.tsx",

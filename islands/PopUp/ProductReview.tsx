@@ -19,15 +19,16 @@ export default function ProductReview({
     const comment = useSignal<string>("");
     const displayModal = useSignal(false);
 
-    const handleSubmit = async () => {
-        const response = await invoke.actions.site.likes({ productID, comment: comment.value });
+    const handleSubmit = async (event: SubmitEvent) => {
+        event.preventDefault();
+        const response = await invoke.site.actions.likes({ productID, comment: comment.value });
         console.log("response:", response);
     }
 
     return (
         <>
             <button
-                class="btn btn-primary"
+                class="btn btn-primary mt-5"
                 onClick={() => displayModal.value = true}
             >
                 Save
@@ -35,7 +36,7 @@ export default function ProductReview({
             {displayModal.value && (
                 <Modal loading="lazy" open>
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-bordered bg-base-100 p-7 rounded-md">
-                        <div className="flex flex-col sm:flex-row items-start gap-3">
+                        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-start gap-3">
                             <Image 
                                 alt={title} 
                                 src={image} 
@@ -54,16 +55,18 @@ export default function ProductReview({
                                             comment.value = (event.target as HTMLInputElement).value
                                         }}
                                         value={comment.value}
+                                        required
                                         className="textarea textarea-bordered h-24" 
+                                        minLength={5}
                                         placeholder="Seu texto aqui" 
                                     />
                                 </label>
                                 <div class="flex justify-end gap-3">
                                     <Button onClick={() => displayModal.value = false}>Cancelar</Button>
-                                    <Button onClick={handleSubmit}>Publicar</Button>
+                                    <Button type="submit">Publicar</Button>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </Modal>
             )}

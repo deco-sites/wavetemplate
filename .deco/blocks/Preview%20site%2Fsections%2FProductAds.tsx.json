@@ -1,0 +1,24 @@
+{
+  "__resolveType": "site/sections/ProductAds.tsx",
+  "productAds": {
+    "breadcrumbList": {},
+    "product": {
+      "additionalProperty": [],
+      "aggregateRating": {},
+      "brand": {},
+      "isRelatedTo": [],
+      "isSimilarTo": [],
+      "isVariantOf": {
+        "hasVariant": [],
+        "additionalProperty": []
+      },
+      "offers": {
+        "offers": []
+      },
+      "review": [],
+      "isAccessoryOrSparePartFor": [],
+      "questions": []
+    },
+    "seo": {}
+  }
+}

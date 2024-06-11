@@ -358,5 +358,17 @@
     "path": "/stats",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/Preview%20site%2Fsections%2FProductAd.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/ProductAd.tsx"
+  },
+  "/.deco/blocks/Preview%20site%2Fsections%2FProductAds.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/ProductAds.tsx"
+  },
+  "/.deco/blocks/Preview%20site%2Fsections%2FAds.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/Ads.tsx"
   }
 }

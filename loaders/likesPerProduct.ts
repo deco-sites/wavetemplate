@@ -15,7 +15,7 @@ export default async function loader(
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": String(ctx.likes.get()),
+        "x-api-key": "sergio",
       },
     },
   );

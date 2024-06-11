@@ -1,7 +1,7 @@
 import { invoke } from "../runtime.ts";
 import { useSignal } from "@preact/signals";
 import { useEffect, useMemo } from "preact/hooks";
-import type { Like } from "../sections/ProductAd.tsx";
+import type { Like } from "../components/product/ProductAd.tsx";
 
 export default function ShowProductEvents() {
     const likes = useSignal<Like | null>(null);
@@ -13,9 +13,7 @@ export default function ShowProductEvents() {
 
     useEffect(() => {
         const getData = async () => {
-            console.log("actualProductID:", actualProductID);
             const response = await invoke.site.loaders.likesPerProduct({ productID: actualProductID });
-            console.log("response:", response);
             likes.value = response;
         }
         if (!actualProductID) return;
@@ -36,6 +34,15 @@ export default function ShowProductEvents() {
                     onInput={e => productID.value = e.currentTarget.value} 
                 />
             </label>
+            <ul class="flex flex-col gap-2 mt-5">
+                {
+                    likes.value?.comments.map((comment, index) => (
+                        <li class="bg-gray-100 rounded p-3" key={index}>
+                            {comment}
+                        </li>
+                    ))
+                }
+            </ul>
             <div class="text-lg py-5">
                 Total de Likes: {likes.value?.product}
             </div>
