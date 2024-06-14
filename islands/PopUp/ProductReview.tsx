@@ -1,9 +1,11 @@
 import Modal from "../../components/ui/Modal.tsx";
 import Image from "apps/website/components/Image.tsx";
 import Button from "../../components/ui/Button.tsx";
+import Toastify from "toastify";
 
 import { invoke } from "../../runtime.ts";
 import { useSignal } from "@preact/signals";
+import { sendEvent } from "../../sdk/analytics.tsx";
 
 interface Props {
     image: string;
@@ -21,8 +23,46 @@ export default function ProductReview({
 
     const handleSubmit = async (event: SubmitEvent) => {
         event.preventDefault();
-        const response = await invoke.site.actions.likes({ productID, comment: comment.value });
-        console.log("response:", response);
+        try {
+            await invoke.site.actions.likes({ productID, comment: comment.value });
+
+            Toastify({
+                text: "Comentário salvo com sucesso.",
+                close: true,
+                gravity: "bottom", 
+                duration: 5000,  
+                position: "center",
+                stopOnFocus: true, 
+                style: {
+                  background: "#27ae60",
+                },
+            }).showToast();
+
+            sendEvent({
+              name: "post_score",
+              params: {
+                score: 1,
+              },
+            });
+
+            displayModal.value = false;
+        } catch(err) {
+            console.error("error:", err);
+
+            Toastify({
+                text: "Houve um erro. Tente novamente mais tarde.",
+                close: true,
+                gravity: "bottom", 
+                duration: 5000,  
+                position: "center",
+                stopOnFocus: true, 
+                style: {
+                  background: "#c0392b",
+                },
+            }).showToast();
+
+            displayModal.value = false;
+        }
     }
 
     return (

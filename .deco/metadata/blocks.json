@@ -370,5 +370,19 @@
   "/.deco/blocks/Preview%20site%2Fsections%2FAds.tsx.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/Ads.tsx"
+  },
+  "/.deco/blocks/pages-Teste-73954.json": {
+    "name": "Teste",
+    "path": "/test",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/Preview%20htmx%2Fsections%2Fhtmx.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "htmx/sections/htmx.tsx"
+  },
+  "/.deco/blocks/Preview%20site%2Fsections%2FHTMXForm.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/HTMXForm.tsx"
   }
 }

@@ -29,6 +29,12 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Web Manifest */}
         <link rel="manifest" href={asset("/site.webmanifest")} />
+
+        {/* Toastify CSS file */}
+        <link
+          href={asset(`/toastify.min.css`)}
+          rel="stylesheet"
+        />
       </Head>
 
       {/* Rest of Preact tree */}

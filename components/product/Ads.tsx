@@ -1,6 +1,7 @@
 import type { Section } from "deco/blocks/section.ts";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 
+import Image from "apps/website/components/Image.tsx";
 import { renderSection } from "apps/website/pages/Page.tsx";
 import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 
@@ -26,11 +27,18 @@ export default function ProductAds({
     return (
         <>
             {renderSection(sections[activeIndex])}
-            <div class="container px-3 sm:px-0 flex align-start gap-3">
+            <div class="container px-3 sm:px-0 flex flex-col sm:flex-row align-start gap-3">
                 <div class="flex flex-col items-center justify-start gap-2">
                     <div class="avatar">
                         <div class="w-24 rounded-full">
-                            <img src={image} />
+                            <Image 
+                                alt="Assistente de anúncios"
+                                src={image} 
+                                width={60}
+                                height={60}
+                                loading="lazy"
+                                fetchPriority="low"
+                            />
                         </div>
                     </div>
                     <button 
