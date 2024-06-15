@@ -1,65 +1,81 @@
 import { useSection } from "deco/hooks/useSection.ts";
 
+import type { SectionProps } from "deco/types.ts";
+
 export interface Props {
     /**
      * @hide
      */
     reminders: string[];
-    /**
-     * @hide
-     */
-    reminder: string;
+}
+
+export const loader = async (
+    props: Props,
+    req: Request
+) => {
+    const contentType = req.headers.get("content-type");
+
+    if (contentType !== "application/x-www-form-urlencoded") {
+        return props;
+    }
+
+    const {
+        reminders = [],
+    } = props;
+
+    const form = await req.formData();
+
+    const reminder = form.get("reminder")?.toString();
+
+    if (reminder) reminders.push(reminder);
+
+    return { reminders };
 }
 
 export default function HTMXForm({
-    reminders = [],
-    reminder = ""
-}: Props) {
+    reminders = []
+}: SectionProps<typeof loader>) {
     console.log("reminders", reminders);
-
-    const changeHandler = (event: Event) => {
-        const target = event.target as HTMLInputElement;
-        reminder = target.value;
-        console.log("reminder", reminder);
-    };
 
     return (
         <>
-            <form
+            <form 
+                class="container"
+                hx-on="htmx:beforeRequest: disableForm, htmx:afterRequest: enableForm"
                 hx-post={useSection({
                     props: {
-                        reminders: reminders.push(reminder),
+                        reminders,
                     }
                 })}
-                hx-target="#reminders"
-                hx-swap="beforeend"
-                hx-on="htmx:beforeRequest: disableForm, htmx:afterRequest: enableForm"
+                hx-swap="outerHTML"
+                hx-target="closest section"
+                hx-indicator="#submitButton"
             >
                 <label class="form-control">
                     <div class="label">
                         <span class="label-text">Lembrete:</span>
                     </div>
                     <textarea 
-                        id="reminder-input"
-                        class="textarea textarea-bordered h-24" 
+                        name="reminder"
+                        class="reminder textarea textarea-bordered h-24" 
                         required
-                        onInput={changeHandler}
                         minLength={5}
-                        placeholder="Escreva um lembrete" 
+                        placeholder="Escreva um lembrete"
                     />
                 </label>
                 <button 
-                    class="btn"
+                    id="submitButton"
+                    class="btn mt-2"
                     type="submit"
                 >
                     Adicionar Lembrete
                 </button>
             </form>
-            <div>
-                <ul id="reminders">
+            <div class="container">
+                <ul class="flex gap-2 my-3" id="reminders">
                     {
                         reminders.map(reminder => (
-                            <li key={reminder}>
+                            <li class="bg-gray-100 rounded p-3" key={reminder}>
                                 {reminder}
                             </li>
                         ))
