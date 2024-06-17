@@ -1,1 +1,45 @@
-{"name":"Product Page","path":"/:slug/p","default":{"possiblePaths":[]},"sections":[{"__resolveType":"commerce/sections/Seo/SeoPDPV2.tsx","jsonLD":{"__resolveType":"PDP Loader"}},{"__resolveType":"Header - 01"},{"__resolveType":"site/sections/ProductAd.tsx","product":{"__resolveType":"vtex/loaders/legacy/productDetailsPage.ts","slug":{"__resolveType":"website/functions/requestToParam.ts","param":"slug"}},"relatedProduct":{"__resolveType":"vtex/loaders/legacy/relatedProductsLoader.ts","crossSelling":"whosawalsosaw","count":1,"slug":{"__resolveType":"website/functions/requestToParam.ts","param":"slug"}},"showRelatedProduct":true},{"__resolveType":"site/sections/Product/ProductDetails.tsx","page":{"__resolveType":"PDP Loader"}}],"__resolveType":"website/pages/Page.tsx"}
+{
+  "name": "Product Page",
+  "path": "/:slug/p",
+  "default": {
+    "possiblePaths": []
+  },
+  "sections": [
+    {
+      "__resolveType": "commerce/sections/Seo/SeoPDP.tsx",
+      "jsonLD": {
+        "__resolveType": "PDP Loader"
+      }
+    },
+    {
+      "__resolveType": "Header - 01"
+    },
+    {
+      "__resolveType": "site/sections/ProductAd.tsx",
+      "product": {
+        "__resolveType": "vtex/loaders/legacy/productDetailsPage.ts",
+        "slug": {
+          "__resolveType": "website/functions/requestToParam.ts",
+          "param": "slug"
+        }
+      },
+      "relatedProduct": {
+        "__resolveType": "vtex/loaders/legacy/relatedProductsLoader.ts",
+        "crossSelling": "whosawalsosaw",
+        "count": 1,
+        "slug": {
+          "__resolveType": "website/functions/requestToParam.ts",
+          "param": "slug"
+        }
+      },
+      "showRelatedProduct": true
+    },
+    {
+      "__resolveType": "site/sections/Product/ProductDetails.tsx",
+      "page": {
+        "__resolveType": "PDP Loader"
+      }
+    }
+  ],
+  "__resolveType": "website/pages/Page.tsx"
+}

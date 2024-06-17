@@ -1,1 +1,17 @@
-{"items":[{"children":[],"image":[],"name":"Quem Somos","url":"/quem-somos"},{"children":[],"image":[],"name":"Culturas","url":"/culturas"}],"__resolveType":"commerce/loaders/navbar.ts"}
+{
+  "items": [
+    {
+      "children": [],
+      "image": [],
+      "url": "/quem-somos",
+      "name": "Quem Somos"
+    },
+    {
+      "children": [],
+      "image": [],
+      "name": "Culturas",
+      "url": "/culturas"
+    }
+  ],
+  "__resolveType": "commerce/loaders/navbar.ts"
+}

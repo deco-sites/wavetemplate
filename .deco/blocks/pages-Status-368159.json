@@ -3,6 +3,9 @@
   "path": "/stats",
   "sections": [
     {
+      "__resolveType": "Header - 01"
+    },
+    {
       "__resolveType": "site/sections/Likes/TotalEvents.tsx"
     },
     {

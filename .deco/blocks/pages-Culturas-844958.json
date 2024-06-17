@@ -1,1 +1,66 @@
-{"name":"Culturas","path":"/culturas","sections":[{"__resolveType":"website/sections/Seo/SeoV2.tsx","title":"Culturas"},{"__resolveType":"Header - 01"},{"__resolveType":"site/sections/Category/CategoryGrid.tsx","header":{"title":"Explore nossas artes","description":"Inspire-se"},"list":[{"image":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/1a78f0e9-e725-4dd7-9e33-a50181e40c5a","href":"/","label":"praia","buttonText":"Arte 1"},{"image":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/bd2aa574-bc2e-47e2-890d-1b0bc7932da5","href":"/","label":"mar colorido","buttonText":"Arte 2"},{"image":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/0f6f6dca-ad7a-42f2-b57c-3531b3b6d85a","href":"/","label":"mandala em cores","buttonText":"Arte 3"},{"image":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/bfc20ab8-4cd8-418e-9350-208b974624fb","href":"/","label":"mulher","buttonText":"Arte 4"}],"layout":{"headerAlignment":"center","categoryCard":{"textPosition":"top","textAlignment":"left"}}},{"__resolveType":"site/sections/Temperature.tsx","temperature":{"__resolveType":"weather/loaders/temperature.ts","lat":-23.5489,"long":-46.6388},"location":"São Paulo"}],"seo":{"__resolveType":"website/sections/Seo/SeoV2.tsx"},"__resolveType":"website/pages/Page.tsx"}
+{
+  "name": "Culturas",
+  "path": "/culturas",
+  "sections": [
+    {
+      "__resolveType": "Header - 01"
+    },
+    {
+      "__resolveType": "site/sections/Category/CategoryGrid.tsx",
+      "header": {
+        "title": "Explore nossas artes",
+        "description": "Inspire-se"
+      },
+      "list": [
+        {
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/1a78f0e9-e725-4dd7-9e33-a50181e40c5a",
+          "href": "/",
+          "label": "praia",
+          "buttonText": "Arte 1"
+        },
+        {
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/bd2aa574-bc2e-47e2-890d-1b0bc7932da5",
+          "href": "/",
+          "label": "mar colorido",
+          "buttonText": "Arte 2"
+        },
+        {
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/0f6f6dca-ad7a-42f2-b57c-3531b3b6d85a",
+          "href": "/",
+          "label": "mandala em cores",
+          "buttonText": "Arte 3"
+        },
+        {
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/bfc20ab8-4cd8-418e-9350-208b974624fb",
+          "href": "/",
+          "label": "mulher",
+          "buttonText": "Arte 4"
+        }
+      ],
+      "layout": {
+        "headerAlignment": "center",
+        "categoryCard": {
+          "textPosition": "top",
+          "textAlignment": "left"
+        }
+      }
+    },
+    {
+      "__resolveType": "site/sections/Temperature.tsx",
+      "temperature": {
+        "__resolveType": "weather/loaders/temperature.ts",
+        "lat": -23.5489,
+        "long": -46.6388
+      },
+      "location": "São Paulo"
+    },
+    {
+      "__resolveType": "website/sections/Seo/Seo.tsx",
+      "title": "Culturas"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/Seo.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}

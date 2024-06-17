@@ -37,6 +37,10 @@ export interface Props {
     animateImage?: boolean;
     relatedProduct?: Product[] | null;
     showRelatedProduct?: boolean;
+    /**
+     * @hide
+     */
+    isMobile: boolean;
 }
 
 export const loader = async (props: Props, req: Request, ctx: AppContext) => {
@@ -52,7 +56,7 @@ export const loader = async (props: Props, req: Request, ctx: AppContext) => {
     } = product;
 
     const likes = await ctx.invoke.site.loaders.likesPerProduct({ productID });
-    return { ...props, likes };
+    return { ...props, likes, isMobile: ctx.device !== "desktop" };
 }
 
 export default function ProductAd({
@@ -64,7 +68,8 @@ export default function ProductAd({
     lazyLoad = true,
     animateImage = true,
     relatedProduct = [],
-    showRelatedProduct = false
+    showRelatedProduct = false,
+    isMobile
 }: SectionProps<typeof loader>) {
     const {
         product: productLikes = 0
@@ -89,25 +94,27 @@ export default function ProductAd({
         description
     } = currentProduct;
 
+    console.log("Name", name, "ID", productID);
+
     const image = images[0]?.url ?? "";
 
     return (
         <div class="container px-3 sm:px-0">
-            <div class={`flex flex-col relative ${vertical && "sm:flex-row"} gap-3 ${highlight && productLikes >= 3 ? "bg-gray-200 border-2 border-black" : "bg-gray-100 border-2 border-transparent"} p-3 rounded-xl my-5 min-h-[320px] max-h-[320px]`}>
+            <div class={`flex flex-col relative ${vertical && !isMobile && "sm:flex-row"} gap-3 ${highlight && productLikes >= 3 ? "bg-gray-200 border-2 border-black" : "bg-gray-100 border-2 border-transparent"} p-3 rounded-xl my-5 min-h-[320px] max-h-[320px]`}>
                 <a 
                     href={url}
                     class="block overflow-hidden rounded-xl"
                     style={{ 
-                        width: vertical ? "250px" : "150px", 
-                        height: vertical ? "250px" : "150px"
+                        width: vertical ? isMobile ? "150px" : "250px" : "150px", 
+                        height: vertical ? isMobile ? "150px" : "250px" : "150px"
                     }}
                 >
                     <Image
                         class={`card object-cover ${animateImage && "hover:scale-110"}`}
                         src={image}
                         alt={name}  
-                        width={vertical ? 250 : 150}
-                        height={vertical ? 250 : 150}
+                        width={vertical ? isMobile ? 150 : 250 : 150}
+                        height={vertical ? isMobile ? 150 : 250 : 150}
                         preload={!lazyLoad}
                         loading={lazyLoad ? "lazy" : "eager"}
                         fetchPriority={lazyLoad ? "low" : "high"}
@@ -115,12 +122,12 @@ export default function ProductAd({
                     />
                 </a>
                 <div class={`flex flex-col items-start w-full ${!vertical && "mt-2"}`}>
-                    <h2 class="text-lg font-bold uppercase">{name}</h2>
-                    {vertical && <p class="grow">{!adDescription ? description : adDescription}</p>}
+                    <h2 class="inline-block max-w-full text-lg font-bold uppercase truncate">{name}</h2>
+                    {vertical && <p class={`grow ${isMobile && "hidden"}`}>{!adDescription ? description : adDescription}</p>}
                     <p class="font-bold sm:text-right">{formatPrice(price)}</p>
                     <ProductReview image={image} title={name} productID={productID} />
                     {
-                        !vertical &&
+                        (!vertical || isMobile) &&
                         <div class="tooltip absolute top-0 right-0 m-3 tooltip-left z-50" data-tip={!adDescription ? description : adDescription}>
                             <button class="btn">Saiba mais</button>
                         </div>

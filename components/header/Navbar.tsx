@@ -5,6 +5,7 @@ import { MenuButton } from "../../islands/Header/Buttons.tsx";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 import { navbarHeight } from "./constants.ts";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
+import Icon from "../ui/Icon.tsx";
 
 // Make it sure to render it on the server only. DO NOT render it on an island
 function Navbar(
@@ -65,6 +66,11 @@ function Navbar(
         </div>
         <ul class="flex gap-6 col-span-1">
           {items.map((item) => <NavItem item={item} />)}
+          <li class="group flex items-center">
+            <a href="/stats" class="py-6">
+              <Icon id="friends" size={24} />
+            </a>
+          </li>
         </ul>
       </div>
     </div>

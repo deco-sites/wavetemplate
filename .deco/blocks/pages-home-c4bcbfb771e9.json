@@ -1,1 +1,184 @@
-{"name":"Home","sections":[{"__resolveType":"website/sections/Seo/SeoV2.tsx"},{"__resolveType":"Header - 01"},{"__resolveType":"site/sections/Ads.tsx","sections":[{"__resolveType":"site/sections/ProductAd.tsx","adDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum bibendum mauris, a iaculis nisi placerat eget. Nulla tincidunt libero ex. Nam ultricies vel turpis ut mattis. Mauris nec sodales magna. Etiam ullamcorper neque quis felis sollicitudin, fringilla congue ante ultricies. Aliquam feugiat leo hendrerit nisi fermentum efficitur.","product":{"__resolveType":"vtex/loaders/legacy/productDetailsPage.ts","similars":false,"slug":"vestido-pure"},"vertical":true,"lazyLoad":false,"relatedProduct":{"__resolveType":"vtex/loaders/workflow/product.ts","data":{"__resolveType":"vtex/loaders/workflow/products.ts","page":1,"pagesize":1,"count":1,"slug":{"__resolveType":"website/functions/requestToParam.ts","param":"slug"},"crossSelling":"whosawalsosaw"},"extensions":[]}},{"__resolveType":"site/sections/ProductAd.tsx","product":{"__resolveType":"vtex/loaders/legacy/productDetailsPage.ts","slug":"camisa-masculina-xadrez-azul-e-gray"},"adDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum bibendum mauris, a iaculis nisi placerat eget. Nulla tincidunt libero ex. Nam ultricies vel turpis ut mattis. Mauris nec sodales magna. Etiam ullamcorper neque quis felis sollicitudin, fringilla congue ante ultricies. Aliquam feugiat leo hendrerit nisi fermentum efficitur.","lazyLoad":true}],"message":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum bibendum mauris, a iaculis nisi placerat eget. Nulla tincidunt libero ex. Nam ultricies vel turpis ut mattis. Mauris nec sodales magna. Etiam ullamcorper neque quis felis sollicitudin, fringilla congue ante ultricies. Aliquam feugiat leo hendrerit nisi fermentum efficitur.","image":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/4c9202c6-b1e1-4687-9d22-e70bcd27f39a"},{"__resolveType":"site/sections/Spacer.tsx","size":"medium"},{"__resolveType":"site/sections/Images/BannerGrid.tsx","title":"Nossas Artes","banners":[{"srcMobile":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/fef43faf-8f56-4e74-9d52-d8be07c8f133","srcDesktop":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/b11770ca-2037-4bc8-982b-007f2646fd7a","alt":"Mar aberto","href":"#"},{"srcMobile":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/005b0d1d-ddf8-42da-95e9-12c076efd728","srcDesktop":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/0610df32-b193-4dd9-9437-72599c131945","alt":"Ilha colorida","href":"#"}],"borderRadius":{"mobile":"3xl","desktop":"3xl"},"itemsPerLine":{"mobile":2,"desktop":2}},{"__resolveType":"site/sections/Product/ProductShelf.tsx","layout":{"headerfontSize":"Normal","headerAlignment":"center"},"products":{"props":{"sort":"release:desc","count":6,"query":"Casacos"},"__resolveType":"vtex/loaders/intelligentSearch/productList.ts"},"cardLayout":{"hide":{},"basics":{"oldPriceSize":"Small","contentAlignment":"Left"},"onMouseOver":{"card":"None","image":"Change image"},"elementsPositions":{"skuSelector":"Top","favoriteIcon":"Top right"}},"description":"Bons para o frio","title":"Casacos"},{"__resolveType":"site/sections/ProductAd.tsx","product":{"__resolveType":"vtex/loaders/legacy/productDetailsPage.ts","slug":"camisa-feminina-pure"},"lazyLoad":true},{"__resolveType":"site/sections/Product/ProductShelf.tsx","title":"Casacos","layout":{"headerfontSize":"Normal","headerAlignment":"center"},"products":{"props":{"sort":"release:desc","count":6,"query":"Camisetas"},"__resolveType":"vtex/loaders/intelligentSearch/productList.ts"},"cardLayout":{"hide":{},"basics":{"oldPriceSize":"Small","contentAlignment":"Left"},"onMouseOver":{"card":"None","image":"Change image"},"elementsPositions":{"skuSelector":"Top","favoriteIcon":"Top right"}},"description":"Bons para o frio"},{"__resolveType":"site/sections/ProductAd.tsx","product":{"__resolveType":"vtex/loaders/legacy/productDetailsPage.ts","slug":"camisa-polo-masculina-sunset"},"lazyLoad":true}],"__resolveType":"website/pages/Page.tsx","path":"/"}
+{
+  "name": "Home",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Seo/Seo.tsx",
+      "title": "Conheça nossas artes"
+    },
+    {
+      "__resolveType": "Header - 01"
+    },
+    {
+      "__resolveType": "site/sections/Ads.tsx",
+      "sections": [
+        {
+          "__resolveType": "site/sections/ProductAd.tsx",
+          "adDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum bibendum mauris, a iaculis nisi placerat eget. Nulla tincidunt libero ex. Nam ultricies vel turpis ut mattis. Mauris nec sodales magna. Etiam ullamcorper neque quis felis sollicitudin, fringilla congue ante ultricies. Aliquam feugiat leo hendrerit nisi fermentum efficitur.",
+          "product": {
+            "__resolveType": "vtex/loaders/legacy/productDetailsPage.ts",
+            "similars": false,
+            "slug": "vestido-pure"
+          },
+          "vertical": true,
+          "lazyLoad": false,
+          "relatedProduct": {
+            "__resolveType": "vtex/loaders/workflow/product.ts",
+            "data": {
+              "__resolveType": "vtex/loaders/workflow/products.ts",
+              "page": 1,
+              "pagesize": 1,
+              "count": 1,
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              },
+              "crossSelling": "whosawalsosaw"
+            },
+            "extensions": []
+          }
+        },
+        {
+          "__resolveType": "site/sections/ProductAd.tsx",
+          "product": {
+            "__resolveType": "vtex/loaders/legacy/productDetailsPage.ts",
+            "slug": "camisa-masculina-xadrez-azul-e-gray"
+          },
+          "adDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum bibendum mauris, a iaculis nisi placerat eget. Nulla tincidunt libero ex. Nam ultricies vel turpis ut mattis. Mauris nec sodales magna. Etiam ullamcorper neque quis felis sollicitudin, fringilla congue ante ultricies. Aliquam feugiat leo hendrerit nisi fermentum efficitur.",
+          "lazyLoad": true
+        },
+        {
+          "__resolveType": "site/sections/ProductAd.tsx",
+          "product": {
+            "__resolveType": "vtex/loaders/legacy/productDetailsPage.ts",
+            "slug": "vestido-rosa"
+          },
+          "adDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum bibendum mauris, a iaculis nisi placerat eget. Nulla tincidunt libero ex. Nam ultricies vel turpis ut mattis. Mauris nec sodales magna. Etiam ullamcorper neque quis felis sollicitudin, fringilla congue ante ultricies. Aliquam feugiat leo hendrerit nisi fermentum efficitur.",
+          "lazyLoad": true
+        },
+        {
+          "__resolveType": "site/sections/ProductAd.tsx",
+          "product": {
+            "__resolveType": "vtex/loaders/legacy/productDetailsPage.ts",
+            "slug": "casaco-feminino-savana"
+          },
+          "adDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum bibendum mauris, a iaculis nisi placerat eget. Nulla tincidunt libero ex. Nam ultricies vel turpis ut mattis. Mauris nec sodales magna. Etiam ullamcorper neque quis felis sollicitudin, fringilla congue ante ultricies. Aliquam feugiat leo hendrerit nisi fermentum efficitur.",
+          "lazyLoad": true
+        }
+      ],
+      "message": "Escolha um produto do nosso site.",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/4c9202c6-b1e1-4687-9d22-e70bcd27f39a"
+    },
+    {
+      "__resolveType": "site/sections/Spacer.tsx",
+      "size": "medium"
+    },
+    {
+      "__resolveType": "site/sections/Images/BannerGrid.tsx",
+      "title": "Nossas Artes",
+      "banners": [
+        {
+          "srcMobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/fef43faf-8f56-4e74-9d52-d8be07c8f133",
+          "srcDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/b11770ca-2037-4bc8-982b-007f2646fd7a",
+          "alt": "Mar aberto",
+          "href": "#"
+        },
+        {
+          "srcMobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/005b0d1d-ddf8-42da-95e9-12c076efd728",
+          "srcDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/0610df32-b193-4dd9-9437-72599c131945",
+          "alt": "Ilha colorida",
+          "href": "#"
+        }
+      ],
+      "borderRadius": {
+        "mobile": "3xl",
+        "desktop": "3xl"
+      },
+      "itemsPerLine": {
+        "mobile": 2,
+        "desktop": 2
+      }
+    },
+    {
+      "__resolveType": "site/sections/Product/ProductShelf.tsx",
+      "layout": {
+        "headerfontSize": "Normal",
+        "headerAlignment": "center"
+      },
+      "products": {
+        "props": {
+          "sort": "release:desc",
+          "count": 6,
+          "query": "Casacos"
+        },
+        "__resolveType": "vtex/loaders/intelligentSearch/productList.ts"
+      },
+      "cardLayout": {
+        "hide": {},
+        "basics": {
+          "oldPriceSize": "Small",
+          "contentAlignment": "Left"
+        },
+        "onMouseOver": {
+          "card": "None",
+          "image": "Change image"
+        },
+        "elementsPositions": {
+          "skuSelector": "Top",
+          "favoriteIcon": "Top right"
+        }
+      },
+      "description": "Bons para o frio",
+      "title": "Casacos"
+    },
+    {
+      "__resolveType": "site/sections/ProductAd.tsx",
+      "product": {
+        "__resolveType": "vtex/loaders/legacy/productDetailsPage.ts",
+        "slug": "camisa-feminina-pure"
+      },
+      "lazyLoad": true
+    },
+    {
+      "__resolveType": "site/sections/Product/ProductShelf.tsx",
+      "title": "Casacos",
+      "layout": {
+        "headerfontSize": "Normal",
+        "headerAlignment": "center"
+      },
+      "products": {
+        "props": {
+          "sort": "orders:desc",
+          "count": 6,
+          "query": "Camisetas"
+        },
+        "__resolveType": "vtex/loaders/intelligentSearch/productList.ts"
+      },
+      "cardLayout": {
+        "hide": {},
+        "basics": {
+          "oldPriceSize": "Small",
+          "contentAlignment": "Left"
+        },
+        "onMouseOver": {
+          "card": "None",
+          "image": "Change image"
+        },
+        "elementsPositions": {
+          "skuSelector": "Top",
+          "favoriteIcon": "Top right"
+        }
+      },
+      "description": "Bons para o frio"
+    },
+    {
+      "__resolveType": "site/sections/ProductAd.tsx",
+      "product": {
+        "__resolveType": "vtex/loaders/legacy/productDetailsPage.ts",
+        "slug": "camisa-polo-masculina-sunset"
+      },
+      "lazyLoad": true
+    }
+  ],
+  "__resolveType": "website/pages/Page.tsx",
+  "path": "/"
+}
