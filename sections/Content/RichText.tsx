@@ -13,12 +13,8 @@ export default function RichText(
 ) {
   return (
     <div
-      class="mx-5 md:mx-10"
+      class="container px-3 sm:px-0"
       dangerouslySetInnerHTML={{ __html: text }}
-      style={{
-        maxWidth: containerWidth ? containerWidth : 1440,
-        margin: "0 auto",
-      }}
     >
     </div>
   );

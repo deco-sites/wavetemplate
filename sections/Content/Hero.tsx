@@ -35,7 +35,7 @@ export default function HeroFlats({
     <div>
       <div class="mx-auto flex flex-col items-center gap-8">
         <div
-          class={`flex w-full xl:container xl:mx-auto py-14 z-10 ${
+          class={`flex w-full container px-3 sm:px-0 py-14 z-10 ${
             image
               ? PLACEMENT[placement]
               : "flex-col items-center justify-center text-center"
