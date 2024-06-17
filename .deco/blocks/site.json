@@ -1,1 +1,75 @@
-{"seo":{"type":"website","image":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/dcce50a8-d41f-4cee-ab26-a7ac8b7be872","title":"Conheça nossas artes","jsonLDs":[],"noIndexing":true,"titleTemplate":"%s | WaveArts","descriptionTemplate":"%s | WaveArts","description":"Mergulhe na beleza e na tradição das artes inspiradas pelo mar.","favicon":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/44578745-0842-4b74-881a-dfd762040550"},"theme":{"__resolveType":"Fashion theme"},"global":[{"__resolveType":"website/sections/Analytics/Analytics.tsx","dangerouslyRunOnMainThread":true},{"__resolveType":"algolia/sections/Analytics/Algolia.tsx"},{"__resolveType":"analytics/sections/Analytics/DecoAnalytics.tsx"},{"__resolveType":"htmx/sections/htmx.tsx"}],"routes":[{"__resolveType":"vtex/loaders/proxy.ts","includeSiteMap":[],"extraPathsToProxy":[],"includeScriptsToHead":{"includes":[{"__resolveType":"analytics/loaders/DecoAnalyticsScript.ts"}],"includePlausible":true}},{"__resolveType":"website/loaders/pages.ts"},{"__resolveType":"website/loaders/redirects.ts"}],"caching":{"directives":[]},"commerce":{"platform":"other"},"platform":"vtex","__resolveType":"site/apps/site.ts","firstByteThresholdMS":true,"abTesting":{"replaces":[],"includeScriptsToHead":{"includes":[]}},"likes":{"__resolveType":"website/loaders/secret.ts","encrypted":"4557302633ff5348d5e59b41606a3935","name":"Teste"},"flavor":{"framework":"fresh"}}
+{
+  "seo": {
+    "type": "website",
+    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/dcce50a8-d41f-4cee-ab26-a7ac8b7be872",
+    "title": "Conheça nossas artes",
+    "jsonLDs": [],
+    "noIndexing": true,
+    "titleTemplate": "%s | Wave Artes",
+    "descriptionTemplate": "%s | Wave Artes",
+    "description": "Mergulhe na beleza e na tradição das artes inspiradas pelo mar.",
+    "favicon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/677bd2e7-0b67-48cb-99ed-d1822eb6b85c"
+  },
+  "theme": {
+    "__resolveType": "Fashion theme"
+  },
+  "global": [
+    {
+      "__resolveType": "website/sections/Analytics/Analytics.tsx",
+      "dangerouslyRunOnMainThread": true
+    },
+    {
+      "__resolveType": "algolia/sections/Analytics/Algolia.tsx"
+    },
+    {
+      "__resolveType": "analytics/sections/Analytics/DecoAnalytics.tsx"
+    },
+    {
+      "__resolveType": "htmx/sections/htmx.tsx"
+    }
+  ],
+  "routes": [
+    {
+      "__resolveType": "vtex/loaders/proxy.ts",
+      "includeSiteMap": [],
+      "extraPathsToProxy": [],
+      "includeScriptsToHead": {
+        "includes": [
+          {
+            "__resolveType": "analytics/loaders/DecoAnalyticsScript.ts"
+          }
+        ],
+        "includePlausible": true
+      }
+    },
+    {
+      "__resolveType": "website/loaders/pages.ts"
+    },
+    {
+      "__resolveType": "website/loaders/redirects.ts"
+    }
+  ],
+  "caching": {
+    "directives": []
+  },
+  "commerce": {
+    "platform": "other"
+  },
+  "platform": "vtex",
+  "__resolveType": "site/apps/site.ts",
+  "firstByteThresholdMS": true,
+  "abTesting": {
+    "replaces": [],
+    "includeScriptsToHead": {
+      "includes": []
+    }
+  },
+  "likes": {
+    "__resolveType": "website/loaders/secret.ts",
+    "encrypted": "4557302633ff5348d5e59b41606a3935",
+    "name": "Teste"
+  },
+  "flavor": {
+    "framework": "fresh"
+  }
+}

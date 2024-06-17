@@ -5,12 +5,8 @@
     {
       "__resolveType": "website/sections/Seo/SeoV2.tsx",
       "title": "Quem Somos",
-      "titleTemplate": "%s | Wave Art",
-      "description": "Na Wave Artes, cada obra é mais do que uma imagem digital.",
       "type": "website",
-      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/fcc4b8b3-1eac-4678-8501-834a66af6897",
-      "favicon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9962/a0518fce-6d6b-4f77-b768-8b7ee59ada5a",
-      "noIndexing": true
+      "noIndexing": false
     },
     {
       "__resolveType": "Header - 01"
