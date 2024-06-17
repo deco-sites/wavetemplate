@@ -16,7 +16,22 @@
             "slug": "vestido-pure"
           },
           "vertical": true,
-          "lazyLoad": false
+          "lazyLoad": false,
+          "relatedProduct": {
+            "__resolveType": "vtex/loaders/workflow/product.ts",
+            "data": {
+              "__resolveType": "vtex/loaders/workflow/products.ts",
+              "page": 1,
+              "pagesize": 1,
+              "count": 1,
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              },
+              "crossSelling": "whosawalsosaw"
+            },
+            "extensions": []
+          }
         },
         {
           "__resolveType": "site/sections/ProductAd.tsx",

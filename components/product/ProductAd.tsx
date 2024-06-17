@@ -6,7 +6,7 @@ import ProductReview from "../../islands/PopUp/ProductReview.tsx";
 import { SectionProps } from "deco/mod.ts";
 
 import type { AppContext } from "../../apps/site.ts";
-import type { ProductDetailsPage } from "apps/commerce/types.ts";
+import type { ProductDetailsPage, Product } from "apps/commerce/types.ts";
 
 export interface Like {
     product: number;
@@ -35,6 +35,8 @@ export interface Props {
      */
     lazyLoad?: boolean;
     animateImage?: boolean;
+    relatedProduct?: Product[] | null;
+    showRelatedProduct?: boolean;
 }
 
 export const loader = async (props: Props, req: Request, ctx: AppContext) => {
@@ -46,20 +48,8 @@ export const loader = async (props: Props, req: Request, ctx: AppContext) => {
     const {
         product: {
             productID,
-            inProductGroupWithID
         }
     } = product;
-
-    console.log("inProductGroupWithID", inProductGroupWithID);
-
-    const relatedProducts = await ctx.invoke.vtex.loaders.legacy
-        .relatedProductsLoader({    
-            crossSelling: "similars",
-            count: 1,
-            id: inProductGroupWithID,
-        });
-
-    console.log("relatedProducts", relatedProducts);
 
     const likes = await ctx.invoke.site.loaders.likesPerProduct({ productID });
     return { ...props, likes };
@@ -73,6 +63,8 @@ export default function ProductAd({
     vertical = false,
     lazyLoad = true,
     animateImage = true,
+    relatedProduct = [],
+    showRelatedProduct = false
 }: SectionProps<typeof loader>) {
     const {
         product: productLikes = 0
@@ -80,19 +72,22 @@ export default function ProductAd({
 
     if (!product) return null;
     if (!product?.product) return null;
-    // console.log("PRODUCT", product.product);
 
     const { price } = useOffer(product?.product?.offers);
 
+    const currentProduct = showRelatedProduct ? 
+        // @ts-expect-error relatedProduct is an array
+        relatedProduct.length > 0 ? relatedProduct[0] :
+        product.product : 
+        product.product;
+
     const {
-        product: {
-            url,
-            name = "",
-            image: images = [],
-            productID,
-            description
-        }
-    } = product;
+        url,
+        name = "",
+        image: images = [],
+        productID,
+        description
+    } = currentProduct;
 
     const image = images[0]?.url ?? "";
 

@@ -25,7 +25,17 @@
           "__resolveType": "website/functions/requestToParam.ts",
           "param": "slug"
         }
-      }
+      },
+      "relatedProduct": {
+        "__resolveType": "vtex/loaders/legacy/relatedProductsLoader.ts",
+        "crossSelling": "whosawalsosaw",
+        "count": 1,
+        "slug": {
+          "__resolveType": "website/functions/requestToParam.ts",
+          "param": "slug"
+        }
+      },
+      "showRelatedProduct": true
     },
     {
       "__resolveType": "site/sections/Product/ProductDetails.tsx",

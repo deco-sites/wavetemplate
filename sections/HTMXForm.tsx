@@ -35,8 +35,6 @@ export const loader = async (
 export default function HTMXForm({
     reminders = []
 }: SectionProps<typeof loader>) {
-    console.log("reminders", reminders);
-
     return (
         <>
             <form 
