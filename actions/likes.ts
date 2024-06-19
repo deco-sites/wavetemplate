@@ -10,7 +10,7 @@ export default async function sendLikesAction(
   _req: Request,
   ctx: AppContext,
 ) {
-  console.log("AQUIIII")
+  console.log("AQUIIII");
   const key = ctx.likes.get();
   console.log("KEY:", key);
   const response = await fetch("https://camp-api.deco.cx/event", {
@@ -21,7 +21,7 @@ export default async function sendLikesAction(
     },
     body: JSON.stringify({
       productId: productID,
-      comment
+      comment,
     }),
   });
 

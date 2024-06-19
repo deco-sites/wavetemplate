@@ -11,7 +11,9 @@ interface PostScoreEvent {
 
 type AnalyticsCustomEvents = PostScoreEvent;
 
-export const sendEvent = <E extends AnalyticsEvent | AnalyticsCustomEvents>(event: E) => {
+export const sendEvent = <E extends AnalyticsEvent | AnalyticsCustomEvents>(
+  event: E,
+) => {
   console.log(JSON.stringify(event, null, 2));
   globalThis.window.DECO.events.dispatch(event);
 };
