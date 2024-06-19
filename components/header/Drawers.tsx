@@ -54,6 +54,7 @@ const Aside = (
 );
 
 function Drawers({ menu, searchbar, children, platform }: Props) {
+  console.log("menu:", menu);
   const { displayCart, displayMenu, displaySearchDrawer } = useUI();
 
   return (
